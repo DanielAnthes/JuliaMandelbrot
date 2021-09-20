@@ -5,8 +5,8 @@ MAX_Z = 2
 MAX_ITER = 80
 
 # Resolution
-WIDTH = 1920
-HEIGHT = 1080
+HEIGHT = 720
+WIDTH = 1280 
 
 # Position
 xpos = (-2, 1)
@@ -59,5 +59,6 @@ end
 x = real(c[1,:])
 y = imag(c[:,1])
 
-p1 = heatmap(x, y, mandelbrot, aspect_ratio=1)
-plot(p1, colorbar=false, grid = false, showaxis=false)
+p1 = heatmap(x, y, mandelbrot, aspect_ratio=1, size=(WIDTH,HEIGHT))
+plt = plot(p1, colorbar=false, grid = false, showaxis=false, background_color="black", size=(WIDTH, HEIGHT))
+savefig("mandelbrot.png")
